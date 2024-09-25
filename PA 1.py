@@ -38,6 +38,6 @@ print("When the radius of the cylinder is", r, "units, and the height is", h, "u
 
 print("\nI will now calculate the time period of a pendulum.")    # Informs the user that the program will calculate the time period of a pendulum (the \n creates a new paragraph).
 L = float(input("Please enter the length of the pendulum, in meters: "))    # Prompts the user to enter the length of the pendulum, in meters (replaces the value of L from Part 1).
-g = float(9.8)    # Assigns the variable, g (gravity), to 9.8.
+g = float(9.8)    # Assigns the value of 9.8 to the variable g, representing gravity.
 P = 2 * math.pi * math.sqrt(L/g)    # Calculates how long it takes for the pendulum to make one back-and-forth swing, given the formnula P = 2 * pi * sqrt of L/g.
 print("When the length of the pendulum is", L, "meters, it takes %.2f seconds for the pendulum to make one back-and-forth swing." %P)    # Prints the time, in seconds, that it takes for the pendulum to make one back-and-forth swing, given the L (length) value.
