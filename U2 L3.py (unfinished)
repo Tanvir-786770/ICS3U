@@ -1,0 +1,6 @@
+x = 1
+count = 1
+while (x > 0 and count < 7):
+  print(x)
+  count += 1
+  x += count
