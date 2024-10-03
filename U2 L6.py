@@ -8,6 +8,11 @@ print("\n")
 
 space = " "
 s = 5
-for h in range(1, 12, 2):
-  print(space * s, S * h)
+for hA in range(1, 12, 2):
+  print("%s%s" %(space * s, S * hA))
   s -= 1
+
+s += 1
+for hB in range(9, 0, -2):
+  s += 1
+  print("%s%s" %(space * s, S * hB))
