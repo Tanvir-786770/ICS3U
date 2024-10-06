@@ -1,6 +1,6 @@
 import math
 
-upper = 5
+n = int(input("Please enter a non-zero whole number: "))
 print("j   tri       factorial")
 print("-----------------------")
 for i in range(1, upper + 1):
