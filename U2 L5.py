@@ -1,6 +1,7 @@
 import math
 
-n = int(input("Please enter a non-zero whole number: "))
+n = int(input("Give me a value of n: "))
+print("Counting from j = 1 to %d:\n" %n)
 print("j   tri       factorial")
 print("-----------------------")
 for i in range(1, n + 1):
