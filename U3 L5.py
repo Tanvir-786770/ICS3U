@@ -61,10 +61,16 @@ else:
 
 new = add(a, b) * 2
 
-print("After adding your two numbers together, and then multiplying the sum by 2, your new number is", new)
+print("\nAfter adding your two numbers together, and then multiplying the sum by 2, your new number is", new)
 
 def myPow(m, n):
   exnum = m ** n
   return exnum
   
-print("Raising your first number to the power of the second number, your next new number is", myPow(a, b))
+print("\nRaising your first number to the power of your second number, your next new number is", myPow(a, b))
+
+if (myPow(a, b) == m.pow(a, b)):
+  print("The validation of this answer has been confirmed.")
+
+else:
+  print("There was an error raising your first number to the power of your second number.")
