@@ -6,9 +6,10 @@ def factorize(N):
   for j in range(1, x + 1):
     if (N % j == 0):
       y.append(j)
-  for i in y:
-    if ((N % i == 0) and (i != 1)):
-      y.append(N/i)
+  b = y
+  for i in b:
+    if (N % i == 0 and i >= 2):
+      y.append(N / i)
   if (y == []):
     return "This number has no proper factors."
   else:
