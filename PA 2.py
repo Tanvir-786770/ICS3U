@@ -4,9 +4,9 @@ ICS3U
 Programming Assignment #2 - Due 11/08/2024
 """
 
-
 import math as m
-# Imports python's math library
+# Imports python's math library, and sets it as 'm' (so that math functions can be called...
+# ... as 'm' instead of 'math')
 def factors(N):
 # Defines a function that determines factors of a number that are less than its square root
     facs = [1]   
@@ -68,10 +68,14 @@ while x == 1:
         E = len(factorlist) - 1
         # Finds the position of the highest factor within the array of 'factorlist'
         # Because the factors are listed from least to greatest in the array...
-        # ...I find the position of the last factor in the array to find the...
-        # ...greatest factor.
-        Dim1 = factorlist[E]
-        Dim2 = int(N / Dim1)
-    
-        print("The smallest possible perimeter is %d, with the dimensions %d by %d." %((Dim1+Dim2)*2,Dim1,Dim2))
+        # ...this is used to find the position of the last factor in the array to find the...
+        # ...greatest factor out of the factors of N less than or equal to its square root
+        D1 = factorlist[E]
+        # Sets one of the dimensions as the greatest factor of the 'factorlist' array
+        D2 = int(N / Dim1)
+        # Divides N by the first dimension to get the second dimension, and then sets the...
+        # ...value to an integer to prevent it from being a float
         
+        print("Minimum perimeter is %d, with the dimensions %d by %d." %((D1+D2)*2,D1,D2))
+        # Prints the most efficient perimeter for the yearbook, given the dimensions D1 & D2.
+        #  - Calulcates perimeter given the formula P = 2(l + w) (written as "(D1+D2)*2")
