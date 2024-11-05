@@ -4,9 +4,6 @@ ICS3U
 Programming Assignment #2 - Due 11/08/2024
 """
 
-import math as m
-# Imports python's math library, and sets it as 'm' (so that math functions can be called...
-# ... as 'm' instead of 'math')
 def factors(N):
 # Defines a function that determines factors of a number that are less than its square root
     facs = [1]   
@@ -20,6 +17,10 @@ def factors(N):
     return facs
     # Returns the array of factors of N that are less than the square root of N
 
+import math as m
+# Imports python's math library, and sets it as 'm' (so that math functions can be called...
+# ... as 'm' instead of 'math')
+
 print("Welcome to the School Yearbook Efficiency Calculator!")
 # Welcomes the user to the program
 print("This program will calculate the lowest possible perimeter for your yearbook.")
@@ -32,7 +33,7 @@ x = 1
 while x == 1:
 # While x is equal to 1, the program for the calculator will keep repeating
     y = 1
-    # As long as y=1, user will be prompted/reprompted to enter a valid input for N (line 38)
+    # As long as y=1, user will be prompted/reprompted to enter a valid input for N (line 39)
     while y == 1:
     # While the value of N is undetermined, or a previous input of N is invalid, y will = 1
         N = input("\nPlease enter the number of photos you have: ")
