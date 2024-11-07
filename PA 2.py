@@ -73,10 +73,13 @@ while x == 1:
         # ...greatest factor out of the factors of N less than or equal to its square root
         D1 = factorlist[E]
         # Sets one of the dimensions as the greatest factor of the 'factorlist' array
-        D2 = int(N / Dim1)
+        D2 = int(N / D1)
         # Divides N by the first dimension to get the second dimension, and then sets the...
         # ...value to an integer to prevent it from being a float
+        P = (D1+D2)*2
+        # Calculates the perimeter of the yearbook. given the dimensions D1 & D2.
+        # - This would be the most efficient perimeter for the user's yearbook, given the...
+        # ... number of photos the yearbook has (the value of N)
         
-        print("Minimum perimeter is %d, with the dimensions %d by %d." %((D1+D2)*2,D1,D2))
+        print("Minimum perimeter is %d, with the dimensions %d by %d." %(P,D1,D2))
         # Prints the most efficient perimeter for the yearbook, given the dimensions D1 & D2.
-        #  - Calulcates perimeter given the formula P = 2(l + w) (written as "(D1+D2)*2")
