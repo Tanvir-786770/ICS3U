@@ -83,3 +83,6 @@ while x == 1:
         
         print("Minimum perimeter is %d, with the dimensions %d by %d." %(P,D1,D2))
         # Prints the most efficient perimeter for the yearbook, given the dimensions D1 & D2.
+
+print("Thank you for using this program! Have a great day!")
+# Thanks the user for using the program, and wishes the user a great day.
