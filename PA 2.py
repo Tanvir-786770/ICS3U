@@ -38,10 +38,12 @@ while x == 1:
     # While the value of N is undetermined, or a previous input of N is invalid, y will = 1
         N = input("\nPlease enter the number of photos you have: ")
         # Prompts the user to enter the number of photos they have.
+        # - The "\n" is used to skip to the next line.
         if N == "done" or N == "Done":
         # Condition for if the user indicates that they want to exit the program
-            print("Goodbye!")
+            print("\nGoodbye!")
             # The program will say goodbye to the user
+            # The "\n" is used to skip to the next line.
             y = 0
             # y will equal 0 so that the user is not prompted to make another input for N
             x = 0
@@ -83,6 +85,3 @@ while x == 1:
         
         print("Minimum perimeter is %d, with the dimensions %d by %d." %(P,D1,D2))
         # Prints the most efficient perimeter for the yearbook, given the dimensions D1 & D2.
-
-print("Thank you for using this program! Have a great day!")
-# Thanks the user for using the program, and wishes the user a great day.
