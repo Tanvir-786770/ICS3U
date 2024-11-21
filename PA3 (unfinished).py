@@ -6,7 +6,7 @@ def plotit(x, y, d, color):
     t.pendown()
     t.dot(d, color)
     t.penup()
-    
+
 filename = "rocky_bullwinkle_mod.xpm"
 fh = open(filename, "r")
 
@@ -20,18 +20,17 @@ cols = int(cols)
 numColors = int(numColors)
 print("%d by %d; %d colors." %(rows,cols,numColors))
 
-# Using arrays
-colorDefs = [[0] * 2] * numColors # declare the array
-for i in range(numColors):
-   colorLine = fh.readline() # file handle must be open
-   colorLine.strip() 
-   sym, c, color = colorLine.split()
-   if sym == "~":
-       sym = " "
-   colorDefs[i][0] = sym
-   colorDefs[i][1] = color
-   print(colorDefs[i][0], ":", colorDefs[i][1])
+myColors = {
+    
+    }
 
+for n in range(numColors):
+    line = fh.readline()
+    line.strip()
+    sym, c, color = line.split()
+    if sym == "~":
+        sym = " "
+    myColors.update({sym:color})
 
 imagearray = []
 
@@ -40,6 +39,18 @@ for x in range(rows):
     line.strip()
     imagearray.append(line)
 
-for i in range(imagearray)
+t.penup()
+t.goto(-(rows/2), cols/2)
+
+t.tracer(0, 0)
+print(myColors)
+print(imagearray)
+print(myColors["#"])
+for x in range(rows-1):
+    for y in range(cols-1):
+        symbol = imagearray[x][y]
+        color = myColors[symbol]
+        plotit((-(cols/2)+(x-1)), ((rows/2)-(y+1)), 3, color)
+t.update()        
 
 fh.close()
