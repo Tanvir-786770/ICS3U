@@ -37,18 +37,19 @@ imagearray = []
 for x in range(rows):
     line = fh.readline()
     line.strip()
+    line = line.replace('\n', '')
     imagearray.append(line)
 
 t.penup()
 t.goto(-(rows/2), cols/2)
 
+t.hideturtle()
 t.tracer(0, 0)
 print(myColors)
 print(imagearray)
-print(myColors["#"])
-for x in range(rows-1):
-    for y in range(cols-1):
-        symbol = imagearray[x][y]
+for x in range(cols):
+    for y in range(rows):
+        symbol = imagearray[y][x]
         color = myColors[symbol]
         plotit((-(cols/2)+(x-1)), ((rows/2)-(y+1)), 3, color)
 t.update()        
