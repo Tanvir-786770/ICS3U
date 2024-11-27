@@ -6,6 +6,12 @@ def plotit(x, y, d, color):
     t.pendown()
     t.dot(d, color)
     t.penup()
+    
+def plotitUpright(cols, rows, x, y, color):
+    plotit((-(cols/2)+x) * 2, ((rows/2)-y) * 2, 2, color)
+
+def plotitUpsidedown(cols, rows, x, y, color):
+    plotit(((cols/2)-x) * 2, (-(rows/2)+y) * 2, 2, color)
 
 print("Welcome to the graphics plotter!")
 print("This program will plot an image using an inputted file!")
@@ -31,6 +37,13 @@ numColors = int(numColors)
 print("\nFILE:", filename)
 print("%d by %d; %d colors." %(rows,cols,numColors))
 
+y = 0
+while y == 0:
+    upsidedown = input("Would you like your image to be upside down? [Y/N]: ")
+    if upsidedown == 'Y' or upsidedown == 'N':
+        y = 1
+    else:
+        print("Invalid input; try again.")
 
 myColors = {
     
@@ -56,12 +69,22 @@ print("\nThe image is now being plotted. Please wait...")
 print("HINT: You will see the image on the 'Python Turtle Graphics' window.")
 t.penup()
 t.hideturtle()
+t.bgcolor("gray70")
 t.tracer(0, 0)
-for x in range(cols):
-    for y in range(rows):
-        symbol = imagearray[y][x]
-        color = myColors[symbol]
-        plotit((-(cols/2)+(x-1))*2, ((rows/2)-(y+1))*2, 3, color)
+
+if upsidedown == 'Y':
+    for x in range(cols):
+        for y in range(rows):
+            symbol = imagearray[y][x]
+            color = myColors[symbol]
+            plotitUpsidedown(cols, rows, x, y, color)
+else:
+    for x in range(cols):
+        for y in range(rows):
+            symbol = imagearray[y][x]
+            color = myColors[symbol]
+            plotitUpright(cols, rows, x, y, color)
+    
 t.update()        
 
 print("\nThe image has been plotted! Please check the 'Python Turtle Graphics' window!")
