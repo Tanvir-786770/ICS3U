@@ -1,17 +1,31 @@
-import turtle as t
+"""
+Tanvir Rahim
+ICS3U - Programming Assignment 3
+Due 12/06/2024
+"""
 
-def plotit(x, y, d, color):
+
+import turtle as t
+  
+def turtlesetup(bgcolor):
     t.penup()
-    t.goto(x, y)
+    t.hideturtle()
+    t.bgcolor(bgcolor)
+    t.tracer(0, 0)
+  
+def plotitUpright(cols, rows, x, y, d, color):
+    t.penup()
+    t.goto((-(cols/2)+x) * 2, ((rows/2)-y) * 2)
     t.pendown()
     t.dot(d, color)
     t.penup()
     
-def plotitUpright(cols, rows, x, y, color):
-    plotit((-(cols/2)+x) * 2, ((rows/2)-y) * 2, 2, color)
-
-def plotitUpsidedown(cols, rows, x, y, color):
-    plotit(((cols/2)-x) * 2, (-(rows/2)+y) * 2, 2, color)
+def plotitUpsidedown(cols, rows, x, y, d, color):
+    t.penup()
+    t.goto(((cols/2)-x) * 2, (-(rows/2)+y) * 2)
+    t.pendown()
+    t.dot(d, color)
+    t.penup()
 
 print("Welcome to the graphics plotter!")
 print("This program will plot an image using an inputted file!")
@@ -37,11 +51,19 @@ numColors = int(numColors)
 print("\nFILE:", filename)
 print("%d by %d; %d colors." %(rows,cols,numColors))
 
-y = 0
-while y == 0:
-    upsidedown = input("Would you like your image to be upside down? [Y/N]: ")
-    if upsidedown == 'Y' or upsidedown == 'N':
-        y = 1
+u = 0
+while u == 0:
+    upsidedown = input("\nWould you like your image to be upside down? [Y/N]: ")
+    if upsidedown == 'Y' or upsidedown == 'N' or upsidedown == 'y' or upsidedown == 'n':
+        u = 1
+    else:
+        print("Invalid input; try again.")
+
+c = 0
+while c == 0:
+    Gray = input("Would you like a lighter or darker gray background? [Light/Dark]: ")
+    if Gray == 'Light' or Gray == 'Dark' or Gray == 'light' or Gray == 'dark':
+        c = 1
     else:
         print("Invalid input; try again.")
 
@@ -67,23 +89,24 @@ for x in range(rows):
 
 print("\nThe image is now being plotted. Please wait...")
 print("HINT: You will see the image on the 'Python Turtle Graphics' window.")
-t.penup()
-t.hideturtle()
-t.bgcolor("gray70")
-t.tracer(0, 0)
 
-if upsidedown == 'Y':
+if Gray == 'Dark' or Gray == 'dark':
+    turtlesetup("gray40")
+else:
+    turtlesetup("gray70")
+
+if upsidedown == 'Y' or upsidedown == 'y':
     for x in range(cols):
         for y in range(rows):
             symbol = imagearray[y][x]
             color = myColors[symbol]
-            plotitUpsidedown(cols, rows, x, y, color)
+            plotitUpsidedown(cols, rows, x, y, 3, color)
 else:
     for x in range(cols):
         for y in range(rows):
             symbol = imagearray[y][x]
             color = myColors[symbol]
-            plotitUpright(cols, rows, x, y, color)
+            plotitUpright(cols, rows, x, y, 3, color)
     
 t.update()        
 
