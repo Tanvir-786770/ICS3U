@@ -14,6 +14,13 @@ def flipimage(upsidedown):
         upsidedown == 'Y'
     return upsidedown
 
+def changebgcolor(lightbg):
+    if lightbg == 'Y' or lightbg == 'y':
+        lightbg = 'N'
+    else:
+        lightbg = 'Y'
+    return lightbg
+
 def ynprompt(question):
     x = 1
     while x == 1:
@@ -133,6 +140,12 @@ while i == 0:
         if change == 'Flip':
             upsidedown = flipimage(upsidedown)
         elif change == 'BG':
-            changebgcolor(lightbg)
-    
+            lightbg = changebgcolor(lightbg)
+        elif change == 'Both':
+            upsidedown = flipimage(upsidedown)
+            lightbg = changebgcolor(lightbg)
+        t.clear()
+    else:
+        i = 1
+        print("Thank you for using this program! :)")
 fh.close()
