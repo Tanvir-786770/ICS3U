@@ -205,11 +205,11 @@ f = 0
 # ...valid and should be accessible.
 while f == 0:
 # The following loop will occur as long as f = 0.
+    filename = input("\nTo begin, please enter the name of your '.xpm' file: ")
+    # The user is prompted to enter the name of the image data (.xpm) file, and
+    # ...the inputted name is assigned as a string to 'filename'
     try:
     # The program will try and execute the following tasks without any errors.
-        filename = input("\nTo begin, please enter the name of your '.xpm' file: ")
-        # The user is prompted to enter the name of the image data (.xpm) file, and
-        # ...the inputted name is assigned as a string to 'filename'
         fh = open(filename, "r")
         # Opens the file that was entered in the above prompt, with "r" setting the
         # ...file access to read-only.
