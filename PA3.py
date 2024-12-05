@@ -80,7 +80,7 @@ def turtlesetup(bgcolor):
 # Defines a subroutine that will set up the turtle plotter.
 # The parameter is the background color of the turtle plotter that the user chooses.
     t.hideturtle()
-    # Hides the turtle pointer/plotter from the screen to avoid obstruction of viewing
+    # Hides the turtle plotter from the screen to avoid obstruction of viewing
     # ...the actual image.
     t.penup()
     # Lifts the turtle plotter from the canvas.
