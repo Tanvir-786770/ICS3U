@@ -99,9 +99,13 @@ def plotitUpright(cols, rows, x, y, d, color):
     xcord = (-(cols/2)+x) * 2
     # The x-coordinate on the turtle canvas that the turtle plotter will plot a point on,
     # ...based on the x-value of the image in its data value.
+    # The x2 at the end defines how much space is between each point plotted when the
+    # ...image is created.
     ycord = ((rows/2)-y) * 2
     # The y-coordinate on the turtle canvas that the turtle plotter will plot a point on,
     # ...based on the y-value of the image in its data value.
+    # The x2 at the end defines how much space is between each point plotted when the
+    # ...image is created.
     t.goto(xcord, ycord)
     # The turtle plotter will move its posiition to the x/y coordinates given, which are
     # ...the values of 'xcord' and 'ycord'.
@@ -119,9 +123,13 @@ def plotitUpsidedown(cols, rows, x, y, d, color):
     xcord = (-(cols/2)+x) * 2
     # The x-coordinate on the turtle canvas that the turtle plotter will plot a point on,
     # ...based on the x-value of the image in its data value.
+    # The x2 at the end defines how much space is between each point plotted when the
+    # ...image is created.
     ycord = ((rows/2)-y) * 2
     # The y-coordinate on the turtle canvas that the turtle plotter will plot a point on,
     # ...based on the y-value of the image in its data value.
+    # The x2 at the end defines how much space is between each point plotted when the
+    # ...image is created.
     t.goto(-(xcord), -(ycord))
     # The turtle plotter will move its posiition to the x/y coordinates given, which are
     # ...the values of 'xcord' and 'ycord'.
@@ -141,9 +149,13 @@ def plotit90deg(cols, rows, x, y, d, color):
     xcord = (-(cols/2)+x) * 2
     # The x-coordinate on the turtle canvas that the turtle plotter will plot a point on,
     # ...based on the x-value of the image in its data value.
+    # The x2 at the end defines how much space is between each point plotted when the
+    # ...image is created.
     ycord = ((rows/2)-y) * 2
     # The y-coordinate on the turtle canvas that the turtle plotter will plot a point on,
     # ...based on the y-value of the image in its data value.
+    # The x2 at the end defines how much space is between each point plotted when the
+    # ...image is created.
     t.goto(ycord, -(xcord))
     # The turtle plotter will move its posiition to the x/y coordinates given, which are
     # ...the values of 'xcord' and 'ycord'.
@@ -163,9 +175,13 @@ def plotit270deg(cols, rows, x, y, d, color):
     xcord = (-(cols/2)+x) * 2
     # The x-coordinate on the turtle canvas that the turtle plotter will plot a point on,
     # ...based on the x-value of the image in its data value.
+    # The x2 at the end defines how much space is between each point plotted when the
+    # ...image is created.
     ycord = ((rows/2)-y) * 2
     # The y-coordinate on the turtle canvas that the turtle plotter will plot a point on,
     # ...based on the y-value of the image in its data value.
+    # The x2 at the end defines how much space is between each point plotted when the
+    # ...image is created.
     t.goto(-(ycord), xcord)
     # The turtle plotter will move its posiition to the x/y coordinates given, which are
     # ...the values of 'xcord' and 'ycord'.
