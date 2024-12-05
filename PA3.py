@@ -413,7 +413,7 @@ print("\nThe image has been plotted. Awaiting canvas update...")
 # Informs the user that the image has been fully plotted by turtle, and that the user
 # ...should wait for the canvas to be updated.
 t.update()
-# Updates the turtle canvas with all actions made since the 'turtle.Tracer(0, 0)'
+# Updates the turtle graphics screen with all actions made since the 'turtle.Tracer(0, 0)'
 # ...command was executed (this will display the image that turtle plotted).
 print("The image has been displayed! Please check the 'Python Turtle Graphics' window!")
 # Informs the user that the image has been displayed, and to check the 'Python Turtle
