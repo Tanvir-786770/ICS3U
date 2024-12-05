@@ -88,7 +88,7 @@ def turtlesetup(bgcolor):
     # Sets the background color to a certain gray background that the user chooses, which
     # ...is represented by 'bgcolor'
     t.tracer(0, 0)
-    # Prevents the turtle plotter from displaying any actions (this speeds up the process
+    # Turns off automatic screen updates of turtle (this speeds up the process
     # ...of plotting the image on turtle).
     # Later, the 'turtle.update()' function is executed, which updates the canvas after
     # ...the entire image is plotted.
