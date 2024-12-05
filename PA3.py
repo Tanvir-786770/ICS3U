@@ -237,10 +237,10 @@ cols, rows, numColors = imageData.split()
 # ...of columns) to 'cols', the second value (the number of rows) to 'rows', and the third
 # ...value (the number of colors) to 'numColors'.
 
-rows = int(rows)
-# Sets the data type of 'rows' as an integer, and assigns it back to the variable 'rows'.
 cols = int(cols)
 # Sets the data type of 'cols' as an integer, and assigns it back to the variable 'cols'.
+rows = int(rows)
+# Sets the data type of 'rows' as an integer, and assigns it back to the variable 'rows'.
 numColors = int(numColors)
 # Sets the data type of 'numColors' as an integer, and assigns it back to the variable
 # ...'numColors'.
