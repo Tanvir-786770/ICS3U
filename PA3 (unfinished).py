@@ -113,31 +113,70 @@ def plotitUpright(cols, rows, x, y, d, color):
     # Lifts the turtle plotter up from the canvas.
     
 def plotitUpsidedown(cols, rows, x, y, d, color):
-    t.penup()
+# Defines a subroutine that plots a point when the image being plotted will be oriented
+# ...upside-down.
     xcord = (-(cols/2)+x) * 2
+    # The x-coordinate on the turtle canvas that the turtle plotter will plot a point on,
+    # ...based on the x-value of the image in its data value.
     ycord = ((rows/2)-y) * 2
+    # The y-coordinate on the turtle canvas that the turtle plotter will plot a point on,
+    # ...based on the y-value of the image in its data value.
     t.goto(-(xcord), -(ycord))
+    # The turtle plotter will move its posiition to the x/y coordinates given, which are
+    # ...the values of 'xcord' and 'ycord'.
+    # (The xcord and ycord values are switched from (x, y) to (-x, -y) in order to comply
+    # ...with an upside-down orientation of the image.)
     t.pendown()
+    # Sets the turtle plotter onto the canvas.
     t.dot(d, color)
+    # Plots a dot, with 'd' representing the size of the dot, and 'color' representing
+    # ...the color of the dot.
     t.penup()
+    # Lifts the turtle plotter up from the canvas.
 
 def plotit90deg(cols, rows, x, y, d, color):
-    t.penup()
+# Defines a subroutine that plots a point when the image being plotted will be oriented
+# ...90 degrees clockwise.
     xcord = (-(cols/2)+x) * 2
+    # The x-coordinate on the turtle canvas that the turtle plotter will plot a point on,
+    # ...based on the x-value of the image in its data value.
     ycord = ((rows/2)-y) * 2
+    # The y-coordinate on the turtle canvas that the turtle plotter will plot a point on,
+    # ...based on the y-value of the image in its data value.
     t.goto(ycord, -(xcord))
+    # The turtle plotter will move its posiition to the x/y coordinates given, which are
+    # ...the values of 'xcord' and 'ycord'.
+    # (The xcord and ycord values are swapped from (x, y) to (y, -x) in order to comply
+    # ...with a 90 degree clockwise orientation of the image.)
     t.pendown()
+    # Sets the turtle plotter onto the canvas.
     t.dot(d, color)
+    # Plots a dot, with 'd' representing the size of the dot, and 'color' representing
+    # ...the color of the dot.
     t.penup()
+    # Lifts the turtle plotter up from the canvas.
     
 def plotit270deg(cols, rows, x, y, d, color):
-    t.penup()
+# Defines a subroutine that plots a point when the image being plotted will be oriented
+# ...270 degrees clockwise.
     xcord = (-(cols/2)+x) * 2
+    # The x-coordinate on the turtle canvas that the turtle plotter will plot a point on,
+    # ...based on the x-value of the image in its data value.
     ycord = ((rows/2)-y) * 2
+    # The y-coordinate on the turtle canvas that the turtle plotter will plot a point on,
+    # ...based on the y-value of the image in its data value.
     t.goto(-(ycord), xcord)
+    # The turtle plotter will move its posiition to the x/y coordinates given, which are
+    # ...the values of 'xcord' and 'ycord'.
+    # (The xcord and ycord values are swapped from (x, y) to (-y, x) in order to comply
+    # ...with a 270 degree clockwise orientation of the image.)
     t.pendown()
+    # Sets the turtle plotter onto the canvas.
     t.dot(d, color)
+    # Plots a dot, with 'd' representing the size of the dot, and 'color' representing
+    # ...the color of the dot.
     t.penup()
+    # Lifts the turtle plotter up from the canvas.
 
 print("Welcome to the graphics plotter!")
 print("This program will plot an image using an inputted file!")
