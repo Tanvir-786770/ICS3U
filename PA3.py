@@ -289,7 +289,7 @@ for x in range(rows):
     line.strip()
     # Used to get rid of the carriage return of this line of content.
     line = line.replace('\n', '')
-    # Removes the paragraph-break to only get the pure content of the image data only.
+    # Removes the paragraph-break to only get the pure content of the image data.
     imagearray.append(line)
     # Appends the line (which is a row of the image) into 'imagearray'.
 
