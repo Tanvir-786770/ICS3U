@@ -34,14 +34,14 @@ Variable Dictionary:
     imagearray - An array containing the actual data of the image (a whole bunch of symbols
                     written out to actually form the image through text). These symbols
                     represent a certain color of the image (the variable 'sym').
-    rotation - A variable containing a yes/no answer, as a string, to a prompt asking the user if
-                they would like the image rotated.
+    rotation - A variable containing a yes/no answer, as a string, to a prompt asking the user
+               if they would like the image rotated.
     rc - A value of 0 that does not change to 1 until the user inputs a valid response to
             what kind of rotation they would like (90/180/270).
-    rchoice - A variable containing the answer to a prompt asking the user what kind of rotation
-                they want.
-    lightbg - A variable containing a yes/no answer, as a string, to a prompt asking the user if
-                they would like a lighter background (gray70) or keep it at default (gray40).
+    rchoice - A variable containing the answer to a prompt asking the user what kind of
+                rotation they want.
+    lightbg - A variable containing a yes/no answer, as a string, to a prompt asking the user
+               if they would like a lighter background (gray70) or keep it at default (gray40).
     x - The variable that iterates through the number of columns of an image; it represents an
         x coordinate of a particular symbol representing a point on the image in the data file.
     y - The variable that iterates through the number of columns of an image; it represents a
@@ -303,9 +303,10 @@ if rotation == 'Y' or rotation == 'y':
     # ...how they would like the image rotated in degrees.
     while rc == 0:
     # While rc = 0, the following loop will occur.
-        rchoice = int(input("How would you like your image rotated (in degrees)? [90/180/270]: "))
-        # The user is asked how they would like the image to be rotated, in degrees. Valid inputs
-        # ...are 90, 180, and 270. The inputted number is assigned to 'rchoice' as an integer.
+        rchoice = int(input("What rotation would you like, in degrees CW? [90/180/270]: "))
+        # The user is asked how they would like the image to be rotated, in degrees. Valid
+        # ... inputs are 90, 180, and 270. The inputted number is assigned to 'rchoice' as an
+        # ...integer.
         if rchoice == 90 or rchoice == 180 or rchoice == 270:
         # If a valid input [90/180/270] is made for 'rchoice', the following will occur.
             rc = 1
@@ -313,10 +314,10 @@ if rotation == 'Y' or rotation == 'y':
         else:
         # If a valid input [90/180/270] is NOT made for 'rchoice', the following will occur.
             print("Invalid input; try again.")
-            # The user is informed that an invalid input has been made, and that they need to try
-            # ...again.
-            # Since rc would still equal 0, the loop will repeat, reprompting the user to enter a
-            # ...valid input for 'rchoice'.
+            # The user is informed that an invalid input has been made, and that they need to
+            # ...try again.
+            # Since rc would still equal 0, the loop will repeat, reprompting the user to enter
+            # ...a valid input for 'rchoice'.
             
 else:
 # If the input for the prompt for 'rotation' is NOT 'Y'/'y', then the following will occur.
@@ -346,80 +347,39 @@ else:
     # The turtlesetup() function is called with the background color set to 'gray40'.
     
         
-if rchoice == 90:
-# If the inputted value for 'rchoice' is '90', the following will occur.
-    for x in range(cols):
-    # In this for loop, 'x' will be iterated through a range of 1 and the number of
-    # ...columns the image has in the data file.
-        for y in range(rows):
-        # In this for loop, 'y' will be iterated through a range of 1 and the number of rows
-        # ...the image has in the data file.
-            symbol = imagearray[y][x]
-            # The program will look for the symbol (logically, the point) of the image
-            # ...that is located at certain position of the imagearray given by the 'x'
-            # ...and 'y' values. That symbol will be assigned to the variable 'symbol'.
-            color = myColors[symbol]
-            # The program will look in the dictionary and search for the color represented
-            # ...by the symbol. 
+for x in range(cols):
+# In this for loop, 'x' will be iterated through a range of 1 and the number of
+# ...columns the image has in the data file.
+    for y in range(rows):
+    # In this for loop, 'y' will be iterated through a range of 1 and the number of rows
+    # ...the image has in the data file.
+        symbol = imagearray[y][x]
+        # The program will look for the symbol (logically, the point) of the image
+        # ...that is located at certain position of the imagearray given by the 'x'
+        # ...and 'y' values. That symbol will be assigned to the variable 'symbol'.
+        color = myColors[symbol]
+        # The program will look in the dictionary and search for the color represented
+        # ...by the symbol. 
+        if rchoice == 90:
+        # If the inputted value for 'rchoice' is '90', the following will occur.
             plotit90deg(cols, rows, x, y, 3, color)
             # Calls the plotit90deg() function by giving the number of columns as 'cols',
             # ...the number of rows as 'rows', the values of 'x' and 'y', the size of
             # ...the point to be plotted, and the color of the point as 'color'.
-
-elif rchoice == 180:
-# If the inputted value for 'rchoice' is '180', the following will occur.
-    for x in range(cols):
-    # In this for loop, 'x' will be iterated through a range of 1 and the number of
-    # ...columns the image has in the data file.
-        for y in range(rows):
-        # In this for loop, 'y' will be iterated through a range of 1 and the number of rows
-        # ...the image has in the data file.
-            symbol = imagearray[y][x]
-            # The program will look for the symbol (logically, the point) of the image
-            # ...that is located at certain position of the imagearray given by the 'x'
-            # ...and 'y' values. That symbol will be assigned to the variable 'symbol'.
-            color = myColors[symbol]
-            # The program will look in the dictionary and search for the color represented
-            # ...by the symbol. 
+        elif rchoice == 180:
+        # If the inputted value for 'rchoice' is '180', the following will occur.
             plotitUpsidedown(cols, rows, x, y, 3, color)
-            # Calls the plotitUpsidedown() function by giving the number of columns as
-            # ...'cols', the number of rows as 'rows', the values of 'x' and 'y', the size
-            # ...of the point to be plotted, and the color of the point as 'color'.
-            
-elif rchoice == 270:
-# If the inputted value for 'rchoice' is '270', the following will occur.
-    for x in range(cols):
-    # In this for loop, 'x' will be iterated through a range of 1 and the number of
-    # ...columns the image has in the data file.
-        for y in range(rows):
-        # In this for loop, 'y' will be iterated through a range of 1 and the number of rows
-        # ...the image has in the data file.
-            symbol = imagearray[y][x]
-            # The program will look for the symbol (logically, the point) of the image
-            # ...that is located at certain position of the imagearray given by the 'x'
-            # ...and 'y' values. That symbol will be assigned to the variable 'symbol'.
-            color = myColors[symbol]
-            # The program will look in the dictionary and search for the color represented
-            # ...by the symbol.
+            # Calls the plotitUpsidedown() function by giving the number of columns as 'cols',
+            # ...the number of rows as 'rows', the values of 'x' and 'y', the size of
+            # ...the point to be plotted, and the color of the point as 'color'.
+        elif rchoice == 270:
+        # If the inputted value for 'rchoice' is '270', the following will occur.
             plotit270deg(cols, rows, x, y, 3, color)
             # Calls the plotit270deg() function by giving the number of columns as 'cols',
             # ...the number of rows as 'rows', the values of 'x' and 'y', the size of
             # ...the point to be plotted, and the color of the point as 'color'.
-else:
-# If the value for 'rchoice' is '0', the following will occur.
-    for x in range(cols):
-    # In this for loop, 'x' will be iterated through a range of 1 and the number of
-    # ...columns the image has in the data file
-        for y in range(rows):
-        # In this for loop, 'y' will be iterated through a range of 1 and the number of rows
-        # ...the image has in the data file.
-            symbol = imagearray[y][x]
-            # The program will look for the symbol (logically, the point) of the image
-            # ...that is located at certain position of the imagearray given by the 'x'
-            # ...and 'y' values. That symbol will be assigned to the variable 'symbol'.
-            color = myColors[symbol]
-            # The program will look in the dictionary and search for the color represented
-            # ...by the symbol.
+        else:
+        # If the value for 'rchoice' is '0', the following will occur.
             plotitUpright(cols, rows, x, y, 3, color)
             # Calls the plotitUpright() function by giving the number of columns as 'cols',
             # ...the number of rows as 'rows', the values of 'x' and 'y', the size of
