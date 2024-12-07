@@ -358,8 +358,8 @@ for x in range(cols):
         # ...that is located at certain position of the imagearray given by the 'x'
         # ...and 'y' values. That symbol will be assigned to the variable 'symbol'.
         color = myColors[symbol]
-        # The program will look in the dictionary and search for the color represented
-        # ...by the symbol. 
+        # The program will look through the 'myColors' dictionary and search for the color
+        # ...represented by the symbol. 
         if rchoice == 90:
         # If the inputted value for 'rchoice' is '90', the following will occur.
             plotit90deg(cols, rows, x, y, 3, color)
