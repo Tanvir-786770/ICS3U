@@ -3,9 +3,10 @@ def getInt(prompt):
     while i == 0:
       try:
         ans = int(input(prompt))
+        i = 1
         if ans <= 0:
           print("Invalid input. Try again.")
-        i = 1
+          i = 0
       except:
         print("Invalid input. Try again.")
         i = 0
