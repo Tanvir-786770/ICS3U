@@ -19,7 +19,7 @@ def printIt(A):
             print(A[w], end=' ')
         print("\n")
 
-filename = '/Users/tanra/Downloads/words40.dat'
+filename = 'words40.dat'
 wordarray = []
 
 fh = open(filename, "r")
