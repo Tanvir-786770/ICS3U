@@ -203,72 +203,176 @@ def isMatch(array, low, high, item):
 
 
 filename = "wordle.dat"
+# Assigns the string 'wordle.dat' to the variable 'filename.' This is the name of the wordle
+# ...data file.
 fh = open(filename, 'r')
+# Opens the file as 'read-only,' and assigns all file handling actions to the variable 'fh.'
 
 wordarray = []
+# Declares an array 'wordarray' as a blank array.
 datearray = []
+# Declares an array 'datearray' as a blank array.
 
 for r in range(1038):
+# Iterating r from 1 to 1038, the following will occur for each step of r.
     line = fh.readline()
+    # Reads the first line of the file, and assigns its content as a string value to 'line.'
     line = line.strip()
+    # Removes the carriage return from the content in variable 'line' and reassigns the new
+    # ...value back into 'line.'
     m, d, y, w = line.split()
+    # Splits the different segments of the line of data in 'line,' and assigns these pieces
+    # ...of data to the variables 'm' (for month), 'd' (for day), 'y' (for year), and 'w'
+    # ...(for the word) respectively.
     date = merge(d, m, y)
+    # Calls the merge() function with parameters 'd,' 'm,' and 'y' and assigns the returned
+    # ...integer value of the full date to the variable 'date.'
     wordarray.append(w)
+    # Appends the value of 'w' onto the array 'wordarray.'
     datearray.append(date)
+    # Appends the value of 'date' onto the array 'datearray.'
 
 print("Welcome to the Wordle Database!")
+# A print statement welcoming the user to the program.
 
 x = 0
+# Declares that x = 0.
 while x == 0:
+# As long as x is equal to 0, the following will recur.
     g = 0
+    # Declares that  g = 0.
     while g == 0:
-        searchtype = input("\nEnter 'w' to look for a word, or 'd' to look find the word for a date: ")
+    # As long as g is equal to 0, the following will recur.
+        searchtype = input("\nEnter 'w' to look for a word, or 'd' to look for a date: ")
+        # Prompts the user to choose whether or not they would like to search for a word,
+        # or a date in this program, and assigns the input to the variable 'searchtype.'
         searchtype = searchtype.lower()
+        # Sets all characters of the string value of 'searchtype' as their lowercase
+        # ...versions, and then reassigns the new string back into 'searchtype.'
 
         if searchtype == 'w' or searchtype == 'd':
+        # If the value of 'searchtype' is "w" or "d," the following will occur.
             g = 1
+            # The variable 'g' will be equal to 1. This will unrequire the user from
+            # ... having to make another valid input for the variable 'searchtype.' 
         else:
+        # If the value of 'searchtype' is NOT "w" or "d," the following will occur.
             print("Invalid input; try again.")
+            # Informs the user that they entered an invalid input, and to try again.
+            # -- From this point, the 'while g == 0' loop will repeat and reprompt the
+            #    ...user to enter a valid input for 'searctype.'
+            
 
 
     if searchtype == "w":
+    # If the input for 'searchtype' was "w," the following will occur.
         sort(wordarray, datearray, 1)
+        # Call the 'sort()' subroutine, given the arrays 'wordarray' and 'datearray.'
+        # -- The '1' as the third parameter indicates that the subroutine should sort
+        #    ...these arrays in alphabetical order of the words.
         word = input("Enter the word you are looking for: ")
+        # Prompts the user to enter the word that they are looking for, and assigns
+        # ...the input to variable 'word.'
         word = word.upper()
+        # Sets the value of 'word' so that all characters are uppercase, and assigns
+        # ...the new string back into 'word.'
         result = isMatch(wordarray, 0, len(wordarray)-1, word)
+        # Call the function isMatch(), given the array to search through ('wordarray')
+        # ...the lowest index (0), the highest index (1 less than length of wordarray),
+        # ...and the word to look for (the string value of 'word'). The return value is
+        # ...assigned to the variable 'result.'
         if result == 0:
+        # If the value of 'result' is 0 (meaning the word was not found), the following
+        # ...will occur.
             print(word, "was not found in this database.")
+            # Informs the user that the word they inputted was not found in the
+            # ...database.
         else:
+        # If the value of 'result' is NOT 0 (meaning that the value of 'result' is the
+        # ...date in which the word was used in Wordle), the following will occur.
             print("The word '%s' was the solution to the puzzle on %d." %(word, result))
+            # Informs the user that the word was found in the database, and was the
+            # ...solution to Wordle on a date, given by the value of 'result.'
+            
     
 
     else:
         sort(wordarray, datearray, 2)
-        p = 1
-        while p == 1:
+         # Call the 'sort()' subroutine, given the arrays 'wordarray' and 'datearray.'
+        # -- The '2' as the third parameter indicates that the subroutine should sort
+        #    ...these arrays in chronological order of the dates.
+        p = 0
+        # Declares the variable 'p' is assigned the integer 0.
+        while p == 0:
+        # As long as the value of 'p' is 0, the following will recur.
             f = 0
+            # Declares the variable 'f' is assigned the integer 0.
             while f == 0:
+            # As long as the value of 'f' is 0, the following will recur.
                 try:
+                # The system will try the following.
                     year = int(input("Enter the year: "))
+                    # The user will be prompted to enter the year of the date they are
+                    # ...trying to search a word from. The input is assigned as an
+                    # ...integer to the variable 'year.'
                     f = 1
+                    # f will equal 1, which will unrequire the user to enter a valid
+                    # ...input for 'year,' unless an exception is thrown.
                 except:
+                # If an exception is thrown while determining the value of 'year,' the
+                # ...following will occur.
                     print("Invalid input; try again.")
+                    # Informs the user that they made an invalid input for 'year,' and
+                    # ...that they need to try again.
                     f = 0
+                    # f will equal 0, which will cause the while loop to recur,
+                    # ...reprompting the user to enter a valid input for 'year.'
         
             year = str(year)
+            # Sets the value of 'year' as a string, and reassigns the new string back
+            # ...into the variable 'year.'
             t = 0
+            # Declares the variable 't' is assigned the integer 0.
             while t == 0:
+            # As long as t = 0, the following will occur.
                 month = input("Enter the month (3-letter abbreviation; ex: 'Jan'): ")
+                # The user will be prompted to enter the month of the date they are
+                # ...trying to search a word from. The input is assigned to the
+                # ...variable 'month.'
                 if month == 'Jan' or month == 'Feb' or month == 'Mar' or month == 'Apr':
+                # If the value of 'month is "Jan," "Feb," "Mar," or "Apr," the following
+                # ...will occur.
                     t = 1
+                    # The value of 't' will be 1, unrequiring the user to enter another
+                    # ...valid input for 'month.'
                 elif month == 'May' or month == 'Jun' or month == 'Jul' or month == 'Aug':
+                # If the value of 'month is "May," "Jun," "Jul," or "Aug," the following
+                # ...will occur.
                     t = 1
+                    # The value of 't' will be 1, unrequiring the user to enter another
+                    # ...valid input for 'month.'
                 elif month == 'Sep' or month == 'Oct' or month == 'Nov' or month == 'Dec':
+                # If the value of 'month is "Sep," "Oct," "Nov," or "Dec," the following
+                # ...will occur.
                     t = 1
-                else:
+                    # The value of 't' will be 1, unrequiring the user to enter another
+                    # ...valid input for 'month.'
+                ## Although the if/elif statements could have been combined into a single
+                ## ...if statement, I seperated them into three statements to avoid the
+                ## ...code to extend all the way to the right and stay within the 95
+                ## ...column limit for this course.
+                else
+                # If the value of 'month' is not a valid three-letter abbreviation for a
+                # ...month, the following will occur.
                     print("Invalid input; try again.")
+                    # Informs the user that they have made an invalid input for 'month,'
+                    # ...and that they must try again.
+                    # -- At this point, the 'while t == 0' loop will recur, which will
+                    #    ...reprompt the user to enter a valid input for 'month.'
             h = 0
+            # Declare the variable 'h' is assigned the integer 0.
             while h == 0:
+            # As long as the value of 'h' is 0, the following will recur.
                 try:
                     day = int(input("Enter the day: "))
                     if day >= 1 and day <= 31:
@@ -289,7 +393,7 @@ while x == 0:
             else:
                 result = isMatch(datearray, 0, len(datearray)-1, dateinput)
                 print("The solution for the puzzle on", dateinput, "is %s." %result)
-                p = 0
+                p = 1
         
     c = 0
     while c == 0:
