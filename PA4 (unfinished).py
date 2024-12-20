@@ -367,7 +367,7 @@ while x == 0:
                     print("Invalid input; try again.")
                     # Informs the user that they have made an invalid input for 'month,'
                     # ...and that they must try again.
-                    # ~ At this point, the 'while t == 0' loop will recur, which will
+                    # -- At this point, the 'while t == 0' loop will recur, which will
                     #   ...reprompt the user to enter a valid input for 'month.'
             h = 0
             # Declare the variable 'h' is assigned the integer 0.
@@ -389,12 +389,13 @@ while x == 0:
                     # ...occur.
                         print("Invalid input; try again.")
                         # The user will be informed that their input for 'day' is invalid.
-                        # ~ At this point, the 'while h == 0' loop will recur,
+                        # -- At this point, the 'while h == 0' loop will recur,
                         #   ...reprompting the user to make a valid input for 'day.'
                 except:
                     print("Invalid input; try again.")
                     # The user will be informed that their input for 'day' is invalid.
-                    # -- At this point, the
+                    # -- At this point, the for 'while h == 0' loop will recur,
+                    #    ...reprompting the user to make a valid input for 'day.'
 
             day = str(day)
             if int(day) < 10:
