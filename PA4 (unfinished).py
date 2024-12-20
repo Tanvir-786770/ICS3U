@@ -367,20 +367,34 @@ while x == 0:
                     print("Invalid input; try again.")
                     # Informs the user that they have made an invalid input for 'month,'
                     # ...and that they must try again.
-                    # -- At this point, the 'while t == 0' loop will recur, which will
-                    #    ...reprompt the user to enter a valid input for 'month.'
+                    # ~ At this point, the 'while t == 0' loop will recur, which will
+                    #   ...reprompt the user to enter a valid input for 'month.'
             h = 0
             # Declare the variable 'h' is assigned the integer 0.
             while h == 0:
             # As long as the value of 'h' is 0, the following will recur.
                 try:
+                # The system will try the following.
                     day = int(input("Enter the day: "))
+                    # The user will be prompted to enter a day of a month, and the
+                    # ...input will be assigned as an integer to the variable 'day.'
                     if day >= 1 and day <= 31:
+                    # If the value of 'day' is greater than or equal to 1 AND less than
+                    # ...or equal to 31, the following will occur.
                         h = 1
+                        # The value of 'h' will become 1, unrequiring the user to enter
+                        # ...another input for 'day' unless an exception is thrown below.
                     else:
+                    # If the value of 'day' is NOT between 1 and 31, the following will
+                    # ...occur.
                         print("Invalid input; try again.")
+                        # The user will be informed that their input for 'day' is invalid.
+                        # ~ At this point, the 'while h == 0' loop will recur,
+                        #   ...reprompting the user to make a valid input for 'day.'
                 except:
                     print("Invalid input; try again.")
+                    # The user will be informed that their input for 'day' is invalid.
+                    # -- At this point, the
 
             day = str(day)
             if int(day) < 10:
