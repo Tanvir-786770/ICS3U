@@ -361,7 +361,7 @@ while x == 0:
                 ## ...if statement, I seperated them into three statements to avoid the
                 ## ...code to extend all the way to the right and stay within the 95
                 ## ...column limit for this course.
-                else
+                else:
                 # If the value of 'month' is not a valid three-letter abbreviation for a
                 # ...month, the following will occur.
                     print("Invalid input; try again.")
@@ -398,27 +398,71 @@ while x == 0:
                     #    ...reprompting the user to make a valid input for 'day.'
 
             day = str(day)
+            # Sets the value of 'day' as a string, and reassigns the new string back into the
+            # ...variable 'day.'
             if int(day) < 10:
+            # If the value of 'day,' as an integer, is less than 10, the following will occur:
                 day = "0" + day
+                # A 0 will be added to the left of the single digit value of 'day,' so that all
+                # ...days are in two-digit format, since all dates have two digits for the day.
             dateinput = merge(day, month, year)
+            # Calls the function merge(), and gives the values of 'day,' 'month,' and 'year'.
+            # ...The return value will be assigned to variable 'dateinput.'
             if dateinput < 20210619:
+            # If the value of 'dateinput' is less than 20210619, the following will occur.
                 print("No wordles occurred before 20210619. Enter a later date.")
+                # The user will be informed that no wordles occurred before June 19, 2021, in
+                # ...the database, and that the user will need to enter a later date.
+                # -- Since p is still equal to 0, the 'while p == 0' loop will recur, which
+                #    ...will reprompt the user to make inputs for variables 'year,' 'month,'
+                #    ...and 'day.'
             elif dateinput > 20240421:
-                print("The latest wordle on this database is on 20240421. Enter an earlier date.")
+            # If the value of 'dateinput' is greater than 20240421, the following will occur.
+                print("The last wordle on this database is on 20240421. Try an earlier date.")
+                # The user will be informed that no wordles occurred after April 4, 2024, in
+                # ...the database, and that the user will need to enter a later date.
+                # -- Since p is still equal to 0, the 'while p == 0' loop will recur, which
+                #    ...will reprompt the user to make inputs for variables 'year,' 'month,'
+                #    ...and 'day.'
             else:
                 result = isMatch(datearray, 0, len(datearray)-1, dateinput)
+                # Call the function isMatch(), given the array to search through ('datearray')
+                # ...the lowest index (0), the highest index (1 less than length of datearray),
+                # ...and the date to look for (the value of 'dateinput'). The return value is
+                # ...assigned to the variable 'result.'
                 print("The solution for the puzzle on", dateinput, "is %s." %result)
+                # Informs the user of the word that was the solution to wordle on the given
+                # ...date (value of 'dateinput').
                 p = 1
         
     c = 0
+    # Declares the variable 'c' is assigned the integer 0.
     while c == 0:
+    # As long as c is equal to 0, the following will recur.
         cont = input("To run this program again, enter 'r'. To end this program, enter 'e': ")
+        # Prompts the user to choose whether they would like to run the program again, or end
+        # ...the program. The input is assigned to the variable 'cont.'
         if cont.lower() == 'r':
+        # If the value of 'cont,' in all lowercase, is "r," the following will occur.
             c = 1
+            # The value of 'c' will be 1, which will prevent the user from entering another
+            # ...valid input for 'cont.'
+            # -- Since x is still equal to 0, the 'while x == 1' loop will recur, which will
+            #    ...run this program again.
         elif cont.lower() == 'e':
+        # If the value of 'cont,' in all lowercase, is "r," the following will occur.
             c = 1
+            # The value of 'c' will be 1, which will prevent the user from entering another
+            # ...valid input for 'cont.'
             x = 1
+            # Since x is equal to 1, the 'while x == 1' loop will end, which will prevent the
+            # ...program from running again.
         else:
             print("Invalid input; try again.")
+            # Informs the user that they have made an invalid input, and that they will have to
+            # ...try again.
+            # -- Since c is still equal to 0, the 'while c == 1' loop will recur, which will
+            #    ...reprompt the user to enter a valid input for 'cont.'
 
 print("Thank you for using this program!")
+# Thanks the user for using the program.
