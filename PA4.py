@@ -464,5 +464,5 @@ while x == 0:
             # -- Since c is still equal to 0, the 'while c == 1' loop will recur, which will
             #    ...reprompt the user to enter a valid input for 'cont.'
 
-print("Thank you for using this program!")
+print("\nThank you for using this program!")
 # Thanks the user for using the program.
